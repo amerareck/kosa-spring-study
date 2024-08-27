@@ -40,14 +40,15 @@
    </filter-mapping>
    
 	   <!-- 로그인을 체크하는 필터 등록 -->
+<!-- 
    <filter>
-   	<filter-name>loginCheckFilter</filter-name>
-   	<filter-class>com.mycompany.springframework.filter.LoginCheckFilter</filter-class>
+   		<filter-name>loginCheckFilter</filter-name>
+	   	<filter-class>com.tobaki.tobaki.filter.LoginCheckFilter</filter-class>
    </filter>
    
    <filter-mapping>
    		<filter-name>loginCheckFilter</filter-name>
-   		<!-- /*: 어떤 요청이든 (이 필터를) 다 실행하겠다. -->
    		<url-pattern>/*</url-pattern>
    </filter-mapping>
+-->
 </web-app>

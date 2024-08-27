@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.tobaki.tobaki.dto.Ch02LoginResult;
+import com.tobaki.tobaki.interceptor.LoginCheck;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -175,6 +176,7 @@ public class Ch02Controller {
 		return "redirect:/ch02/loginForm";
 	}
 	
+	@LoginCheck
 	@GetMapping("/mypage")
 	public String myPage() {
 		log.info("실행");
