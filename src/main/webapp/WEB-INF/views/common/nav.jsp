@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <nav class="navbar navbar-dark bg-dark">
 	<div class="ms-2">
+		<%-- pageContext.reqeust.contextPath : root 경로를 리턴해준다. 여기서는 아이피:포트/springframework 가 해당. --%>
 		<a href="${pageContext.request.contextPath}" class="navbar-brand">
 			<img width="40" src="${pageContext.request.contextPath}/resources/image/logo-spring.png" />
 			<span class="align-middle">전자정부프레임워크(Spring Framework)</span>

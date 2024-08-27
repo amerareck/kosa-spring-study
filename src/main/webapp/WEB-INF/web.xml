@@ -24,4 +24,30 @@
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
+   <filter>
+      <filter-name>characterEncodingFilter</filter-name>
+      <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+      <init-param>
+         <param-name>encoding</param-name>
+         <param-value>UTF-8</param-value>
+      </init-param>
+   </filter>
+
+   <filter-mapping>
+      <filter-name>characterEncodingFilter</filter-name>
+      <url-pattern>/*</url-pattern>
+   </filter-mapping>
+   
+	   <!-- 로그인을 체크하는 필터 등록 -->
+   <filter>
+   	<filter-name>loginCheckFilter</filter-name>
+   	<filter-class>com.mycompany.springframework.filter.LoginCheckFilter</filter-class>
+   </filter>
+   
+   <filter-mapping>
+   		<filter-name>loginCheckFilter</filter-name>
+   		<!-- /*: 어떤 요청이든 (이 필터를) 다 실행하겠다. -->
+   		<url-pattern>/*</url-pattern>
+   </filter-mapping>
 </web-app>

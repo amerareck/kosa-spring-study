@@ -30,6 +30,64 @@
 						<input type="submit" value="제출" class="btn btn-info btn-sm" />
 					</form>
 				</div>
+				
+				<hr class="hr" />
+				
+				<div class="mt-2">
+					<button class="btn btn-info btn-sm mb-2" onclick="requestGet1()">JavaScript: location.href 속성 이용</button>
+					<br/>
+					<br/>
+					<button class="btn btn-info btn-sm mb-2" onclick="requestGet2()">JavaScript: ajax 이용</button>
+					<br/>
+					<br/>
+					<button class="btn btn-info btn-sm mb-2" onclick="requestGet3()">JavaScript: ajax 이용</button>
+					<div class="border mt-2" id="ajaxResult">
+						Ajax 결과
+					</div>
+					
+					<script>
+						function requestGet1() {
+							location.href = "getLocationHref?bno=5&bkind=free";
+						}
+						
+						function requestGet2() {
+							$.ajax({
+								url: "getAjax1",
+								method: "get",
+								//data: "bno=5&bkind=free"
+								data: {bno:5, bkind:"free"},
+								success: function (data) {
+									// data가 HTML 조각일 경우
+									$('#ajaxResult').html(data);
+									//document.querySelector('#ajaxResult').innerHTML = data;
+								}
+							});
+						}
+						
+						function requestGet3() {
+							$.ajax({
+								url: "getAjax2",
+								method: "get",
+								//data: "bno=5&bkind=free"
+								data: {bno:5, bkind:"free"},
+								success: function (data) {
+									//data가 json 일 경우
+									console.log(data);
+									let content = "";
+									content += "<div class='card'>";
+									content += "	<div class='card-header'> AJAX의 JSON 응답</div>";
+									content += "	<div class='card-body'>";
+									data.data.forEach(function (item) {
+										content += "<img src='${pageContext.request.contextPath}/resources/image/photos/"+item+"' class='me-2' height='100' />";
+									});
+									content += "	</div>";
+									content += "</div>";
+									$('#ajaxResult').html(content);
+								}
+							});
+						}
+					</script>
+				</div>
 			</div>
 		</div>
 <%@ include file="/WEB-INF/views/common/bottom.jsp" %>
