@@ -71,6 +71,21 @@
     	</div>
   	</div>
  <%-- item3 end --%>
+  <%-- item4 start --%>
+ 	<div class="accordion-item">
+	   	<h2 class="accordion-header">
+	      	<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ch04" aria-expanded="false" aria-controls="ch04">
+	        	Ch04. Controller(form 유효성 검사)
+	      	</button>
+	   	</h2>
+	   	<div id="ch04" class="accordion-collapse collapse" data-bs-parent="#accordionMenu">
+	     		<div class="accordion-body">
+	     			<ul>
+	     				<li><a href="${pageContext.request.contextPath}/ch04/loginForm">로그인 폼 유효성 검사</a></li>
+	     		</div>
+	   	</div>
+ 	</div>
+<%-- item4 end --%>
 </div>
 <%-- 아코디언 끝 --%>
 
