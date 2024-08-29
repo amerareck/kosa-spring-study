@@ -1,23 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-	String path = request.getRequestURI();
-//	out.println(path);
-	if(!path.contains("home.jsp")) {
-		path = path.substring(path.indexOf("ch"), path.length());
-		path = path.substring(0, path.indexOf("/"));
-	} else {
-		path = null;
-	}
-%>
+    
 <%-- 아코디언 시작 --%>
 <div class="accordion" id="accordionMenu">
 	<%-- item start --%>
   	<div class="accordion-item">
     	<h2 class="accordion-header">
-      	<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ch01" aria-expanded="true" aria-controls="ch01">
-        	Ch01. 개발 환경 구축
-      	</button>
+	      	<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ch01" aria-expanded="true" aria-controls="ch01">
+	        	Ch01. 개발 환경 구축
+	      	</button>
     	</h2>
     	<div id="ch01" class="accordion-collapse collapse" data-bs-parent="#accordionMenu">
       		<div class="accordion-body">
@@ -31,7 +22,7 @@
   <%-- item start --%>
   	<div class="accordion-item">
     	<h2 class="accordion-header">
-	      	<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ch02" aria-expanded="true" aria-controls="ch02">
+	      	<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ch02" aria-expanded="false" aria-controls="ch02">
 	        	Ch02. Controller(RequestMapping)
 	      	</button>
     	</h2>
@@ -53,8 +44,8 @@
    <%-- item start --%>
   	<div class="accordion-item">
     	<h2 class="accordion-header">
-	      	<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ch03" aria-expanded="true" aria-controls="ch03">
-	        	Ch03. Controller(RequestParam)
+	      	<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ch03" aria-expanded="false" aria-controls="ch03">
+	        	Ch03. Controller(RequestParameter)
 	      	</button>
     	</h2>
     	<div id="ch03" class="accordion-collapse collapse" data-bs-parent="#accordionMenu">
@@ -71,10 +62,10 @@
     	</div>
   	</div>
  <%-- item3 end --%>
-  <%-- item4 start --%>
+ <%-- item4 start --%>
  	<div class="accordion-item">
 	   	<h2 class="accordion-header">
-	      	<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ch04" aria-expanded="false" aria-controls="ch04">
+	      	<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ch04" aria-expanded="false" aria-controls="ch04">
 	        	Ch04. Controller(form 유효성 검사)
 	      	</button>
 	   	</h2>
@@ -82,6 +73,7 @@
 	     		<div class="accordion-body">
 	     			<ul>
 	     				<li><a href="${pageContext.request.contextPath}/ch04/loginForm">로그인 폼 유효성 검사</a></li>
+	     			</ul>
 	     		</div>
 	   	</div>
  	</div>
@@ -89,7 +81,7 @@
  <%-- item5 start --%>
  	<div class="accordion-item">
 	   	<h2 class="accordion-header">
-	      	<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ch05" aria-expanded="false" aria-controls="ch05">
+	      	<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ch05" aria-expanded="false" aria-controls="ch05">
 	        	Ch05. Controller (헤더 값 및 쿠키 설정)
 	      	</button>
 	   	</h2>
@@ -99,6 +91,7 @@
 	     				<li><a href="${pageContext.request.contextPath}/ch05/header">요청 헤더 값 얻기</a></li>
 	     				<li><a href="${pageContext.request.contextPath}/ch05/createCookie">쿠키 생성</a></li>
 	     				<li><a href="${pageContext.request.contextPath}/ch05/readCookie">쿠키 읽기</a></li>
+	     			</ul>
 	     		</div>
 	   	</div>
  	</div>
@@ -106,35 +99,68 @@
 <%-- item6 start --%>
  	<div class="accordion-item">
 	   	<h2 class="accordion-header">
-	      	<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ch06" aria-expanded="false" aria-controls="ch06">
+	      	<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ch06" aria-expanded="false" aria-controls="ch06">
 	        	Ch06. Forward와 Redirect
 	      	</button>
 	   	</h2>
 	   	<div id="ch06" class="accordion-collapse collapse" data-bs-parent="#accordionMenu">
-     		<div class="accordion-body">
-     			<ul>
-     				<li><a href="${pageContext.request.contextPath}/ch06/forward">포워드</a></li>
-     				<li><a href="${pageContext.request.contextPath}/ch06/redirect">리다이렉트</a></li>
-     				<li><a href="${pageContext.request.contextPath}/ch06/sessionData">다른 요청 시 세션 데이터 이용</a></li>
-     			</ul>
-     		</div>
+	     		<div class="accordion-body">
+	     			<ul>
+	     				<li><a href="${pageContext.request.contextPath}/ch06/forward">포워드</a></li>
+	     				<li><a href="${pageContext.request.contextPath}/ch06/sessionData?queryString=redirect">리다이렉트</a></li>
+	     				<li><a href="${pageContext.request.contextPath}/ch06/sessionData">다른 요청 시 세션 데이터 이용</a></li>
+	     				<li><a href="${pageContext.request.contextPath}/ch06/cartView">장바구니</a></li>
+	     				<li><a href="${pageContext.request.contextPath}/ch06/productList">상품 목록 보기</a></li>
+	     			</ul>
+	     		</div>
 	   	</div>
  	</div>
 <%-- item6 end --%>
+<%-- item7 start --%>
+ 	<div class="accordion-item">
+	   	<h2 class="accordion-header">
+	      	<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ch07" aria-expanded="false" aria-controls="ch07">
+	        	Ch07. 데이터(객체) 사용 범위 및 데이터 전달 
+	      	</button>
+	   	</h2>
+	   	<div id="ch07" class="accordion-collapse collapse" data-bs-parent="#accordionMenu">
+	     		<div class="accordion-body">
+	     			<ul>
+	     				<li><a href="${pageContext.request.contextPath}/ch07/objectScope">데이터(객체) 사용 범위</a></li>
+	     				<li><a href="${pageContext.request.contextPath}/ch07/objectScope2">데이터(객체) 사용 범위</a></li>
+	     			</ul>
+	     		</div>
+	   	</div>
+ 	</div>
+<%-- item7 end --%>
+<%-- item8 start --%>
+ 	<div class="accordion-item">
+	   	<h2 class="accordion-header">
+	      	<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ch08" aria-expanded="false" aria-controls="ch08">
+	        	Ch08. 세션 지원 API
+	      	</button>
+	   	</h2>
+	   	<div id="ch08" class="accordion-collapse collapse" data-bs-parent="#accordionMenu">
+	     		<div class="accordion-body">
+	     			<ul>
+	     				<li><a href="${pageContext.request.contextPath}/ch08/login">로그인</a></li>
+	     				<li><a href="${pageContext.request.contextPath}/ch08/loginInfo">로그인 정보</a></li>
+	     				<li><a href="${pageContext.request.contextPath}/ch08/logout">로그아웃</a></li>
+	     			</ul>
+	     		</div>
+	   	</div>
+ 	</div>
+<%-- item8 end --%>
 </div>
 <%-- 아코디언 끝 --%>
 
-<%
-	if(path != null) {
-%>
 <script>
-	const path = "<%= path %>";
+	const path = '${chNum}';
 	console.log(path);
-	$('#'+path).addClass('show');
-</script>
-
-<%
+	if(path !== '') {
+		$('#'+path).addClass('show');
+		$('button[aria-controls='+path+']').removeClass('collapsed');
 	}
-%>
+</script>
 
 

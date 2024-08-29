@@ -10,12 +10,15 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.tobaki.tobaki.dto.Ch02LoginResult;
 import com.tobaki.tobaki.interceptor.LoginCheck;
@@ -27,6 +30,11 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/ch02")
 public class Ch02Controller {
 	private static final Logger logger = LoggerFactory.getLogger(Ch02Controller.class);
+	
+	@ModelAttribute
+	public void chNum(Model model) {
+		model.addAttribute("chNum", "ch02");
+	}
 	
 	@RequestMapping("/getMethod")
 	public String getMethod() {
@@ -82,7 +90,7 @@ public class Ch02Controller {
 	}
 	
 	@RequestMapping(value="/postFormTag", method=RequestMethod.POST)
-	public String postFormTag(String bno, String bkind) {
+	public String postFormTag(String bno, String bkind, RedirectAttributes redi) {
 		log.info("실행");
 		log.info("bno: "+ bno);
 		log.info("bkind: "+ bkind);
@@ -159,7 +167,7 @@ public class Ch02Controller {
 	}
 	
 	@PostMapping("/login")
-	public String login(String mid, String mpassword, HttpSession session) {
+	public String login(String mid, String mpassword, HttpSession session, RedirectAttributes redi) {
 		log.info("실행");
 		log.info("mid: " + mid);
 		log.info("mpassword: " + mpassword);

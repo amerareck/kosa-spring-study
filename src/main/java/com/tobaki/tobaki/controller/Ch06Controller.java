@@ -5,7 +5,9 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.tobaki.tobaki.dto.Ch06Member;
 
@@ -15,6 +17,11 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 @RequestMapping("/ch06")
 public class Ch06Controller {
+	
+	@ModelAttribute
+	public void chNum(Model model) {
+		model.addAttribute("chNum", null);
+	}
 	
 	@GetMapping("forward")
 	public String forward(Model model, HttpServletRequest req) {
@@ -34,7 +41,7 @@ public class Ch06Controller {
 	}
 	
 	@GetMapping("redirect")
-	public String redirect(Model model, HttpServletRequest req) {
+	public String redirect(Model model, HttpServletRequest req, RedirectAttributes redi) {
 		log.info("실행");
 		Ch06Member member = new Ch06Member();
 		member.setMid("user1");

@@ -8,8 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -17,6 +19,11 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 @RequestMapping("/ch05")
 public class Ch05Controller {
+	
+	@ModelAttribute
+	public void chNum(Model model) {
+		model.addAttribute("chNum", null);
+	}
 	
 	@GetMapping("/header")
 	public String header(
@@ -48,7 +55,7 @@ public class Ch05Controller {
 	}
 	
 	@GetMapping("/createCookie")
-	public String createCookie(HttpServletResponse res) {
+	public String createCookie(HttpServletResponse res, RedirectAttributes redi) {
 		log.info("실행");
 		
 		//쿠키 생성
