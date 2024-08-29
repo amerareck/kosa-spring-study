@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <nav class="navbar navbar-dark bg-dark">
 	<div class="ms-2">
 		<%-- pageContext.reqeust.contextPath : root 경로를 리턴해준다. 여기서는 아이피:포트/springframework 가 해당. --%>
@@ -10,6 +11,13 @@
 	</div>
 	
 	<div class="me-2">
-		<a class="btn btn-success btn-sm">로그인</a>
+		<c:if test="${login==null}">
+			<a class="btn btn-success btn-sm" href="${pageContext.request.contextPath}/ch08/login">로그인</a>
+		</c:if>
+		<c:if test="${login!=null}">
+			<img width="40" src="${pageContext.request.contextPath}/resources/image/userLogo.png" />
+			<span class="me-2 text-light">${login.mid}</span>
+			<a class="btn btn-success btn-sm" href="${pageContext.request.contextPath}/ch08/logout">로그아웃</a>
+		</c:if>
 	</div>
 </nav>
