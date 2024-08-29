@@ -22,6 +22,14 @@
 			<p>mname: ${member2.mname}</p>
 			<p>memail: ${member2.memail}</p>
 		</div>
+		
+		<hr/>
+		
+		<div>
+			<p>mid: ${member.mid}</p>
+			<p>mname: ${member.mname}</p>
+			<p>memail: ${member.memail}</p>
+		</div>
 	</div>
 </div>
 <jsp:include page="/WEB-INF/views/common/bottom.jsp"></jsp:include>
