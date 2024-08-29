@@ -103,6 +103,24 @@
 	   	</div>
  	</div>
 <%-- item5 end --%>
+<%-- item6 start --%>
+ 	<div class="accordion-item">
+	   	<h2 class="accordion-header">
+	      	<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ch06" aria-expanded="false" aria-controls="ch06">
+	        	Ch06. Forward와 Redirect
+	      	</button>
+	   	</h2>
+	   	<div id="ch06" class="accordion-collapse collapse" data-bs-parent="#accordionMenu">
+     		<div class="accordion-body">
+     			<ul>
+     				<li><a href="${pageContext.request.contextPath}/ch06/forward">포워드</a></li>
+     				<li><a href="${pageContext.request.contextPath}/ch06/redirect">리다이렉트</a></li>
+     				<li><a href="${pageContext.request.contextPath}/ch06/sessionData">다른 요청 시 세션 데이터 이용</a></li>
+     			</ul>
+     		</div>
+	   	</div>
+ 	</div>
+<%-- item6 end --%>
 </div>
 <%-- 아코디언 끝 --%>
 
