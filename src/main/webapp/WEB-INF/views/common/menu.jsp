@@ -168,6 +168,26 @@
 	   	</div>
  	</div>
 <%-- item9 end --%>
+<%-- item10 start --%>
+ 	<div class="accordion-item">
+	   	<h2 class="accordion-header">
+	      	<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ch10" aria-expanded="false" aria-controls="ch10">
+	        	Ch10. 예외 처리
+	      	</button>
+	   	</h2>
+	   	<div id="ch10" class="accordion-collapse collapse" data-bs-parent="#accordionMenu">
+     		<div class="accordion-body">
+     			<ul>
+		        	<li><a href="${pageContext.request.contextPath}/ch10/handlingException1">try-catch 이용</a></li>
+		        	<li><a href="${pageContext.request.contextPath}/ch10/handlingException2">@ExceptionHandler 이용</a></li>
+		        	<li><a href="${pageContext.request.contextPath}/ch10/handlingException3">사용자 정의 예외 처리</a></li>
+		        	<li><a href="${pageContext.request.contextPath}/ch10/handlingException4">기타 500 예외 처리</a></li>
+		        	<li><a href="${pageContext.request.contextPath}/call404Error">404 처리</a></li>
+     			</ul>
+     		</div>
+	   	</div>
+ 	</div>
+<%-- item10 end --%>
 </div>
 <%-- 아코디언 끝 --%>
 
