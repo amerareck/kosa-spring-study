@@ -204,6 +204,22 @@
 	   	</div>
  	</div>
 <%-- item11 end --%>
+<%-- item12 start --%>
+ 	<div class="accordion-item">
+	   	<h2 class="accordion-header">
+	      	<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ch12" aria-expanded="false" aria-controls="ch12">
+	        	Ch12. 의존성 주입 (DI)
+	      	</button>
+	   	</h2>
+	   	<div id="ch12" class="accordion-collapse collapse" data-bs-parent="#accordionMenu">
+     		<div class="accordion-body">
+     			<ul>
+		        	<li><a href="${pageContext.request.contextPath}/ch12/createBeanByXML">XML 설정으로 관리 bean 생성</a></li>
+     			</ul>
+     		</div>
+	   	</div>
+ 	</div>
+<%-- item12 end --%>
 </div>
 <%-- 아코디언 끝 --%>
 
