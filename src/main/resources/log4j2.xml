@@ -13,5 +13,12 @@
     	<Logger name="com.tobaki.tobaki" level="debug" additivity="false">
     		<AppenderRef ref="Console"/>
     	</Logger>
+    	
+    <!-- jdbc 로깅을 위한 설정 추가
+    	 SQL문을 실행할 때마다, 동적 쿼리문을 로그로 한 번 출력해준다.
+     -->
+	    <Logger name="jdbc.sqltiming" level="info" additivity="false">
+	      <AppenderRef ref="Console"/>
+	    </Logger> 
 	</Loggers>
 </Configuration>

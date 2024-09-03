@@ -220,6 +220,22 @@
 	   	</div>
  	</div>
 <%-- item12 end --%>
+<%-- item13 start --%>
+ 	<div class="accordion-item">
+	   	<h2 class="accordion-header">
+	      	<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ch13" aria-expanded="false" aria-controls="ch13">
+	        	Ch13. 데이터베이스 연동
+	      	</button>
+	   	</h2>
+	   	<div id="ch13" class="accordion-collapse collapse" data-bs-parent="#accordionMenu">
+     		<div class="accordion-body">
+     			<ul>
+		        	<li><a href="${pageContext.request.contextPath}/ch13/writeBoardForm">게시물 작성</a></li>
+     			</ul>
+     		</div>
+	   	</div>
+ 	</div>
+<%-- item13 end --%>
 </div>
 <%-- 아코디언 끝 --%>
 
