@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.tobaki.tobaki.dao.mybatis.Ch13BoardDAO;
 import com.tobaki.tobaki.dto.Ch13Board;
+import com.tobaki.tobaki.dto.Ch13Pager;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -35,5 +36,13 @@ public class Ch13BoardService {
 	
 	public void deleteBoard(int bno) {
 		
+	}
+
+	public int getTotalRows() {
+		return boardDAO.countRows();
+	}
+
+	public List<Ch13Board> getBoardList(Ch13Pager pager) {
+		return boardDAO.selectList(pager);
 	}
 }

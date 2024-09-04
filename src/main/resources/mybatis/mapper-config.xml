@@ -12,5 +12,6 @@
 		<typeAlias type="com.tobaki.tobaki.dto.Ch13Account" alias="Account" />
 		<typeAlias type="com.tobaki.tobaki.dto.Ch13Board" alias="Board" />
 		<typeAlias type="com.tobaki.tobaki.dto.Ch13Member" alias="Member" />
+		<typeAlias type="com.tobaki.tobaki.dto.Ch13Pager" alias="Pager" />
 	</typeAliases>
 </configuration>
