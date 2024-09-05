@@ -9,8 +9,8 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@Component // 일반 클래스를 관리 객체(=빈)로 만들기
-@ControllerAdvice // 컨트롤러에서 발생한 에러를 이 객체가 처리하겠다.
+//@Component // 일반 클래스를 관리 객체(=빈)로 만들기
+//@ControllerAdvice // 컨트롤러에서 발생한 에러를 이 객체가 처리하겠다.
 public class Ch10ExceptionHandler {
 	@ExceptionHandler(NullPointerException.class)
 	public String handleNullPointerException(Model model) {

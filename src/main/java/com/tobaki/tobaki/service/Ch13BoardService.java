@@ -22,7 +22,7 @@ public class Ch13BoardService {
 	}
 	
 	public Ch13Board getBoard(int bno) {
-		return null;
+		return boardDAO.selectByBno(bno);
 	}
 	
 	public void writeBoard(Ch13Board board) {
@@ -30,12 +30,12 @@ public class Ch13BoardService {
 		boardDAO.insert(board);
 	}
 	
-	public void updateBoard(Ch13Board board) {
-		
+	public int updateBoard(Ch13Board board) {
+		return boardDAO.update(board);
 	}
 	
-	public void deleteBoard(int bno) {
-		
+	public int deleteBoard(int bno) {
+		return boardDAO.delete(bno);
 	}
 
 	public int getTotalRows() {
@@ -44,5 +44,13 @@ public class Ch13BoardService {
 
 	public List<Ch13Board> getBoardList(Ch13Pager pager) {
 		return boardDAO.selectList(pager);
+	}
+	
+	public Ch13Board getBoardAttach(int bno) {
+		return boardDAO.selectAttachByBno(bno);
+	}
+
+	public int createHitCount(int bno) {
+		return boardDAO.updateHitCount(bno);
 	}
 }

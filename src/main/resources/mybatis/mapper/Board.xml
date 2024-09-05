@@ -32,4 +32,45 @@
 		select count(*)
 		from board
 	</select>
+	
+	<select id="selectByBno" parameterType="int" resultType="Board" >
+		select bno, btitle, bcontent, mid, bdate, bhitcount, battachoname
+		from board
+		where bno = #{bno}
+	</select>
+	
+	<select id="selectAttachByBno" parameterType="int" resultType="Board" >
+		select battachoname, battachtype, battachdata
+		from board
+		where bno = #{bno}
+	</select>
+	
+	<update id="update" parameterType="Board">
+		update 
+			board
+		set 
+			btitle=#{btitle}, 
+			bcontent=#{bcontent}
+			<if test="battachoname != null">
+				,
+				battachoname=#{battachoname},
+				battachtype=#{battachtype},
+				battachdata=#{battachdata}
+			</if>
+		where bno=#{bno}
+			
+	</update>
+	
+	<delete id="delete" parameterType="int" >
+		delete from board where bno=#{bno}
+	</delete>
+	
+	<update id="updateHitCount" parameterType="int" >
+		update
+			board
+		set
+			bhitcount = bhitcount+1
+		where bno = #{bno}
+	
+	</update>
 </mapper>

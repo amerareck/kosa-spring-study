@@ -23,7 +23,7 @@
 			<c:forEach items="${list}" var="element">
 				<tr>
 					<td>${element.bno}</td>
-					<td>${element.btitle}</td>
+					<td><a href="detailBoardAddHitCount?bno=${element.bno}">${element.btitle}</a></td>
 					<td>${element.mid}</td>
 					<td><fmt:formatDate value="${element.bdate}" pattern="yy-MM-dd hh:mm:ss" /></td>
 					<td>${element.bhitcount}</td>
