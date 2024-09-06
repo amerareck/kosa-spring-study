@@ -9,4 +9,5 @@ public class Ch13Member {
 	private boolean menabled;
 	private String mrole;
 	private String memail;
+	private String mpassword;
 }

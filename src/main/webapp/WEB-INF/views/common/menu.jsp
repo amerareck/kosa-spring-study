@@ -237,6 +237,28 @@
 	   	</div>
  	</div>
 <%-- item13 end --%>
+<%-- item14 start --%>
+ 	<div class="accordion-item">
+	   	<h2 class="accordion-header">
+	      	<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ch14" aria-expanded="false" aria-controls="ch14">
+	        	Ch14. AOP(Aspect Oriented Programming)
+	      	</button>
+	   	</h2>
+	   	<div id="ch14" class="accordion-collapse collapse" data-bs-parent="#accordionMenu">
+     		<div class="accordion-body">
+     			<ul>
+		        	<li><a href="${pageContext.request.contextPath}/ch14/before">메소드 호출 전에 공통 코드 실행</a></li>
+		        	<li><a href="${pageContext.request.contextPath}/ch14/after">메소드 호출 후에 공통 코드 실행</a></li>
+		        	<li><a href="${pageContext.request.contextPath}/ch14/afterReturning">메소드가 정상적으로 리턴값을 제공할 경우 코드 실행</a></li>
+		        	<li><a href="${pageContext.request.contextPath}/ch14/afterThrowing">메소드에서 예외가 발생할 경우 공통 코드 실행</a></li>
+		        	<li><a href="${pageContext.request.contextPath}/ch14/around">메소드 호출 전&후에 공통 코드 실행</a></li>
+		        	<li><a href="${pageContext.request.contextPath}/ch14/boardList">사례1: 실행 시간 측정</a></li>
+		        	<li><a href="${pageContext.request.contextPath}/ch14/writeBoardForm">사례2: 로그인 체크</a></li>
+     			</ul>
+     		</div>
+	   	</div>
+ 	</div>
+<%-- item14 end --%>
 </div>
 <%-- 아코디언 끝 --%>
 

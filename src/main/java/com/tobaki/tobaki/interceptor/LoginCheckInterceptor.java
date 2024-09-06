@@ -30,7 +30,8 @@ public class LoginCheckInterceptor implements HandlerInterceptor {
 		
 		if(getInfo == null) {
 			log.info("로그인 정보가 없음. 로그인 화면 이동");
-			response.sendRedirect(session.getServletContext().getContextPath() + "/ch02/loginForm");
+			//response.sendRedirect(session.getServletContext().getContextPath() + "/ch02/loginForm");
+			response.sendRedirect(session.getServletContext().getContextPath() + "/ch13/loginForm");
 			return false;
 		}
 		log.info("로그인 정보 확인!");

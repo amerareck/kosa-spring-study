@@ -7,7 +7,7 @@
 
 	<mvc:interceptors>
 		<mvc:interceptor>
-			<mvc:mapping path="/ch02/**"/>
+			<mvc:mapping path="/ch13/**"/>
 			<bean class="com.tobaki.tobaki.interceptor.LoginCheckInterceptor"></bean>
 		</mvc:interceptor>
 	</mvc:interceptors>
